@@ -1,4 +1,4 @@
-# Generated from /home/tuandat/Assigment1/initial/src/main/bkool/parser/BKOOL.g4 by ANTLR 4.8
+# Generated from /home/tuandat/vscode/PPL/Assigment1/initial/src/main/bkool/parser/BKOOL.g4 by ANTLR 4.8
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
