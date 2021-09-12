@@ -1,0 +1,10 @@
+
+class Operator
+{
+    int main()
+    {
+        return Other.print("this is result");
+    }
+}
+
+        

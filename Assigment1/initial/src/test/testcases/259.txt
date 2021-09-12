@@ -1,0 +1,21 @@
+
+class Test {
+        int main()
+{
+   int f1, f2, fib_ser, cnt, lmt;
+
+   Other.printf("Please enter the limit of the Fibonacci series :");
+   Other.scanf("%d",lmt);
+   Other.printf("\nFibonacci series is: \n%d \n%d \n",f1,f2);
+   fib_ser:=f1+f2;
+    cnt := cnt + 1;
+    Other.printf("%d\n",fib_ser);
+    f1:=f2;
+    f2:=fib_ser;
+
+   return 0;
+}
+
+}
+
+        

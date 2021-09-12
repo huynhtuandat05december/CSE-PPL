@@ -1,0 +1,7 @@
+
+ class Test {
+    int main(){}
+    int main(int a; int[5] b){};
+}
+
+        

@@ -1,0 +1,13 @@
+
+class Test {
+        int main(){
+            int a;
+            a := int + 1;
+        }
+        int main(){
+            int a;
+            a := void + 1;
+        }
+}
+
+        

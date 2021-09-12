@@ -1,0 +1,1 @@
+-,+,false,P4366,;,*,,,l84bc,,,>,:,flaot,true,[,/,while,Va93a,boolean,and,integer,function,-,,,false,(,*,new,,,Wbffd,,,),,,y6349,else,w7e53,,,(,,,),*,),<EOF>

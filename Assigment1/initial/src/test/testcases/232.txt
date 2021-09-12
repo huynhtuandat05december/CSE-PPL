@@ -1,0 +1,9 @@
+
+class Test {
+    int main(){
+            if abc then a=c
+            else c=d;
+        }
+}
+
+        

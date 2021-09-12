@@ -1,0 +1,8 @@
+
+class Test {
+        int main(){
+            call("alo")
+        }
+}
+
+        

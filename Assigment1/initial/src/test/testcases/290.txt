@@ -1,0 +1,10 @@
+
+class Operator
+{
+    void main()
+    {
+        return && ;
+    }
+}
+
+        

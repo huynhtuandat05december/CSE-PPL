@@ -1,0 +1,11 @@
+
+ class Test {
+
+        int abc(){}
+        boolean abc(){}
+        float[5] abc(){}
+        void print(){}
+        int[5] abc(){}
+        string low2up(){}
+}
+        

@@ -1,0 +1,17 @@
+
+ class Test {
+
+        int main(int[5] arg){}
+        void goo ( float[5] x  ) {
+    float[ 10 ] y ;
+    float[ 10 ] x ;
+    float[ 10 ] z ;
+    a.foo( z ) ;
+     a.foo( x ) ;
+      a.foo( y ) ;
+    return y;
+}
+
+}
+
+        

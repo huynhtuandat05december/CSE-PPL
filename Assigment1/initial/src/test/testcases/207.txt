@@ -1,0 +1,6 @@
+
+class Example2 {
+void main(){
+   s := new Rectangle(3,4);
+}}
+        

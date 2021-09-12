@@ -1,0 +1,5 @@
+
+        class array {
+            int[4] element = { };
+        }
+        

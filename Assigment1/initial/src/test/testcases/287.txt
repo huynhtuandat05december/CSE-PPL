@@ -1,0 +1,10 @@
+
+class Operator
+{
+    int main()
+    {
+        return Other.print("this is result").print1("this is result1").print2("this is result2");
+    }
+}
+
+        

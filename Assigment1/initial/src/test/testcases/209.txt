@@ -1,0 +1,9 @@
+
+class Example2 {
+float nty(){
+    b[3]:={2.3, 4.2, 102e3};
+    a[3+x.foo(2)] := a[b[2]] +3;
+}
+}
+
+        

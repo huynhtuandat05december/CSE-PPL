@@ -1,0 +1,10 @@
+
+class Test {
+    int main(){
+            int i;
+            i := 1;
+            for (i;i;i)
+        }
+}
+
+        

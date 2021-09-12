@@ -1,0 +1,27 @@
+
+class Test {
+        int main()
+{
+   int A, B, temp;
+
+   Other.printf("Please enter the 1st number : ");
+   Other.scanf("%d",A);
+   Other.printf("\nPlease enter the 2nd number : ");
+   Other.scanf("%d",B);
+
+   Other.printf("\nBefore swapping:\n");
+   Other.printf("A - %d \nB - %d", A, B);
+
+   temp := A;
+   A := B;
+   B := temp;
+
+   Other.printf("\nAfter swapping:\n");
+   Other.printf("A - %d \nB - %d", A, B);
+
+   return 0;
+}
+
+}
+
+        

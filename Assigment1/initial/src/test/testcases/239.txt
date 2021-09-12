@@ -1,0 +1,12 @@
+
+class Test {
+    void main() {
+            if {a==b} then{
+                a:=1;
+            }
+            else
+                a:=2;
+        }
+}
+
+        

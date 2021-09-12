@@ -1,0 +1,16 @@
+
+class Student {
+        int id;
+        string name;
+
+        void insert(int i; string n) {
+            id := i;
+            name := n;
+        }
+
+        void display() {
+            return id^name;
+        }
+}
+
+        

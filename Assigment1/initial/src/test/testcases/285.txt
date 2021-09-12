@@ -1,0 +1,10 @@
+
+class Operator
+{
+    int main()
+    {
+        RETURN 1;
+    }
+}
+
+        

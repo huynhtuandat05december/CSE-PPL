@@ -1,0 +1,14 @@
+
+ class Person {
+
+        string firstName; # property
+        string lastName;  # property
+        int age;          # property
+
+        string c(){
+            s := a +b + c * d;
+            d := a && b;
+            e := !a;
+        }
+}
+        

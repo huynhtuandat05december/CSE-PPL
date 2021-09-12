@@ -1,0 +1,1 @@
+class,Rectangle,extends,Shape,{,float,getArea,(,),{,return,this,.,length,*,this,.,width,;,},},<EOF>

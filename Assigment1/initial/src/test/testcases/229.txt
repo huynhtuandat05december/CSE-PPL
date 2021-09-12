@@ -1,0 +1,8 @@
+
+class Test {
+    int a;
+    float b;
+    boolean[] c;
+}
+
+        

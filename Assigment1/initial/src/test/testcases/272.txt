@@ -1,0 +1,29 @@
+
+class Shape {
+    float length,width;
+    float getArea() {}
+    Shape(float length,width){
+        this.length := length;
+        this.width := width;
+    }
+}
+class Rectangle extends Shape {
+    float getArea(){
+        return this.length*this.width;
+    }
+}
+class Triangle extends Shape {
+    float getArea(){
+        return this.length*this.width / 2;
+    }
+}
+class Example2 {
+    void main(){
+        s := new Rectangle(3,4);
+        io.writeFloatLn(s.getArea());
+        s := new Triangle(3,4);
+        io.writeFloatLn(s.getArea());
+    }
+}
+
+        

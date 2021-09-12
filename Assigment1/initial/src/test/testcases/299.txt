@@ -1,0 +1,7 @@
+
+        class array {
+            boolean main(){
+                return true&&false;
+            }
+        }
+        

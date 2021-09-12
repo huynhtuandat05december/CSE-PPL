@@ -1,0 +1,8 @@
+
+class Test {
+    void foo(int i){
+            int child_foo(float f){}
+        }
+}
+
+        

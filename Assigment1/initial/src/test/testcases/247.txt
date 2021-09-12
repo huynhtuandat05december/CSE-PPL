@@ -1,0 +1,9 @@
+
+class Test {
+        int main(){
+            int a;
+            a := continue + 1;
+        };
+}
+
+        

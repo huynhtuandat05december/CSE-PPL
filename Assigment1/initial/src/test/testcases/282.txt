@@ -1,0 +1,13 @@
+
+class Operator
+{
+    int main()
+    {
+        if flag then
+            io.write("Expression is true");
+        else
+            io.write("Expression is false");
+    }
+}
+
+        

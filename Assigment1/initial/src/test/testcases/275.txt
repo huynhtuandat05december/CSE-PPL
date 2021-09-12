@@ -1,0 +1,26 @@
+
+class Vehicle
+{
+    Vehicle()
+    {
+        io.writeFloatLn("This is a Vehicle");
+    }
+}
+
+class FourWheeler extends Vehicle
+{
+    FourWheeler()
+    {
+        io.writeFloatLn("This is a 4 wheeler Vehicle");
+    }
+}
+
+class Car extends FourWheeler
+{
+    Car()
+    {
+        io.writeFloatLn("This is a car");
+    }
+}
+
+        

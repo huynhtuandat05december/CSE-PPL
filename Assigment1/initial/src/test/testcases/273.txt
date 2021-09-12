@@ -1,0 +1,9 @@
+
+class Parent {
+    int p;
+}
+class Child extends Parent {
+    int c;
+}
+
+        

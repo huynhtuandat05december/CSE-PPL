@@ -1,0 +1,13 @@
+
+        class ID {
+            static final int total=0;
+            final static string name;
+            final ID(){
+                this.name:=nil;
+            }
+            ID(string name){
+                this.name:=name;
+                ID.total := ID.total +1;
+            }
+        }
+        
