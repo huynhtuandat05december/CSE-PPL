@@ -1,0 +1,9 @@
+
+ class Example2 {
+     float nty(){
+        if flag then
+            r:=2.0;
+        else
+            a[0]:= s; }
+    }
+         

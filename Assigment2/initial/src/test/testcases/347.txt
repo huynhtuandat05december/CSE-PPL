@@ -1,0 +1,15 @@
+
+class Operator
+{
+    int a=0;
+    int main()
+    {
+        for i := 1 to 100 do {
+            if i==2 then
+                break;
+            else
+                a:=a+1;
+        }
+    }
+}
+        

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Operator),[MethodDecl(Id(main),Instance,[],VoidType,Block([],[AssignStmt(ArrayCell(Id(a),BinaryOp(-,BinaryOp(*,BinaryOp(/,BinaryOp(+,IntLit(3),CallExpr(Id(x),Id(foo),[IntLit(2)])),IntLit(5)),IntLit(3)),IntLit(25))),BinaryOp(+,ArrayCell(Id(a),ArrayCell(Id(b),IntLit(2))),BinaryOp(/,BinaryOp(*,IntLit(3),ArrayCell(Id(a),IntLit(4))),IntLit(3))))]))])])

@@ -1,0 +1,6 @@
+
+        class XXX {
+            XXX[5] method(){ }
+            static XXX[5] method(){ }
+        }
+        

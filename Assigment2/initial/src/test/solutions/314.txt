@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Example2),[MethodDecl(Id(nty),Instance,[],FloatType,Block([],[If(Id(flag),AssignStmt(Id(r),FloatLit(2.0)),AssignStmt(ArrayCell(Id(a),IntLit(0)),Id(s)))]))])])

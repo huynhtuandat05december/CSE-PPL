@@ -1,0 +1,9 @@
+
+class Person {
+        string firstName; # property
+        string lastName;  # property
+        int age;          # property
+        void fullname() {
+        }
+}
+        

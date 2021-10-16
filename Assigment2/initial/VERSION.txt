@@ -1,0 +1,10 @@
+0.1.2
+Changes from 0.1.1
+AST.py
+- New abstract class StoreDecl as a subclass of Decl
+- VarDecl and ConstDecl become subclasses of StoreDecl
+- Type of decl in class BlockStmt is changed to List[StoreDecl]
+- Type of decl in class AttributeDecl is changed to StoreDecl
+- Type of value in ConstDecl is changed to Expr
+
+

@@ -1,0 +1,7 @@
+
+class Student {
+     int id;  # truong hoac thanh vien du lieu
+     float salary; # truong hoac thanh vien du lieu
+     String name; #  truong hoac thanh vien du lieu
+ }
+        

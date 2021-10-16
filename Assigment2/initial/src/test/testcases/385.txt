@@ -1,0 +1,6 @@
+
+        class XXX {
+            void method(){ }
+            static void method(){ }
+        }
+        

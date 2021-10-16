@@ -1,0 +1,9 @@
+
+class Operator
+{
+    int main()
+    {
+        return -1/-2;
+    }
+}
+        

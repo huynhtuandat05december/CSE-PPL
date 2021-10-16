@@ -1,0 +1,6 @@
+
+        class XXX {
+            int[5] method(){ }
+            static int[5] method(){ }
+        }
+        

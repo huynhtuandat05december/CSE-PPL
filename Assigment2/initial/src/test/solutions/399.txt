@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(makeSchool),[MethodDecl(Id(main),Instance,[],VoidType,Block([],[For(Id(i),BooleanLit(True),BinaryOp(-,Id(z),IntLit(1)),False,Block([VarDecl(Id(new_class),StringType)],[Call(Id(io),Id(fflush),[Id(stdin)]),Call(Id(io),Id(getline),[Id(new_class)]),If(BinaryOp(!=,Id(new_class),StringLit("-1")),Call(Id(School),Id(updateClass),[Id(new_class)]),Break)])])]))])])

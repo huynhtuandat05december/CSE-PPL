@@ -1,0 +1,7 @@
+
+        class Example1 {
+            int factorial(int n){
+                if n == 0 then return 1; else return n * this.factorial(n - 1);
+            }
+        }
+            

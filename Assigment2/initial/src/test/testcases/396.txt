@@ -1,0 +1,21 @@
+class A {
+            int sum(int[5] arr) {
+                int s = 0;
+                for i := 0 to 5 do
+                    s := s + arr[i];
+                return s;
+            }
+            void main() {
+                int[5] arr;
+                for i := 0 to 5 do {
+                    int v;
+                    v := os.get("int");
+                    if v <= 0 then {
+                        os.print("Error!!");
+                        break;
+                    }
+                    arr[i] := v;
+                }
+                os.print(this.sum(arr));
+            }
+        }

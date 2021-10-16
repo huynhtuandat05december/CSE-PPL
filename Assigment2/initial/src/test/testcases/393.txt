@@ -1,0 +1,6 @@
+class A {
+            int main() {
+                {return a;}
+                {return b;}
+            }
+        }

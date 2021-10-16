@@ -1,0 +1,16 @@
+
+        class XXX {
+            void method(){
+                int x;
+                float x;
+                boolean x;
+                string x;
+                XXX x;
+                int[0] x;
+                float[0] x;
+                boolean[0] x;
+                string[0] x;
+                XXX[0] x;
+            }
+        }
+        

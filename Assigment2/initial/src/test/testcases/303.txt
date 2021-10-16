@@ -1,0 +1,3 @@
+class Ex {
+            int my1Var;
+        }

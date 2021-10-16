@@ -1,0 +1,12 @@
+
+class sinhvien
+{
+        string masinhvien, ten, quequan;
+        int tuoi;
+        float diemtoan, diemly, diemhoa;
+        void di(){}
+        void dung(){}
+        void ngoi(){}
+        void hoctap(){}
+}
+        

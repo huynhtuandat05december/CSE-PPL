@@ -1,0 +1,7 @@
+
+        class XXX {
+            int[5] method(){
+                return {1,1.1E+1};
+            }
+        }
+        

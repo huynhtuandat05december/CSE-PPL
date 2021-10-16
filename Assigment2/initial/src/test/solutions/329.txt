@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Test),[MethodDecl(Id(main),Instance,[],IntType,Block([],[AssignStmt(Id(a),BinaryOp(+,BinaryOp(+,CallExpr(Id(Other),Id(b),[]),CallExpr(Id(Other),Id(c),[])),CallExpr(Id(Other),Id(d),[]))),Call(Id(Other),Id(print),[Id(a)]),AssignStmt(Id(a),BinaryOp(+,BinaryOp(/,Id(a),CallExpr(Id(Other),Id(sum),[Id(a),Id(b)])),CallExpr(Id(Other),Id(sub),[Id(a),Id(b)])))]))])])

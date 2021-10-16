@@ -1,0 +1,13 @@
+
+class Example2 {
+    float nty(){
+# start of declaration part
+float r,s;
+int[5] a,b;
+# list of statements
+r:=2.0;
+s:=r*r*this.myPI;
+a[0]:= s;
+}
+}
+        

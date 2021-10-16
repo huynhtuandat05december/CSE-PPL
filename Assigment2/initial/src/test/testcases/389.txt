@@ -1,0 +1,6 @@
+class A {
+            int main() {
+                int a = 2,b;
+                final A f = new A();
+            }
+        }

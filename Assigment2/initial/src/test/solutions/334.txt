@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Student),[AttributeDecl(Instance,VarDecl(Id(id),IntType)),AttributeDecl(Instance,VarDecl(Id(name),StringType)),MethodDecl(Id(insert),Instance,[param(Id(i),IntType),param(Id(n),StringType)],VoidType,Block([],[AssignStmt(Id(id),Id(i)),AssignStmt(Id(name),Id(n))])),MethodDecl(Id(display),Instance,[],VoidType,Block([],[Return(BinaryOp(^,Id(id),Id(name)))]))])])

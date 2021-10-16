@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(CallbackHell),[MethodDecl(Id(main),Instance,[],IntType,Block([],[For(Id(i),IntLit(1),IntLit(100),True,Block([],[For(Id(x),IntLit(5),IntLit(2),False,Block([],[If(IntLit(1),Block([],[If(IntLit(1),Block([],[If(IntLit(1),Block([],[If(IntLit(1),Block([],[Return(IntLit(1))]))]))]))]))])])])])]))])])

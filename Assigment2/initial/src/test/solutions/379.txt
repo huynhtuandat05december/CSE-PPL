@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(XXX),[MethodDecl(Id(method),Instance,[],ArrayType(5,IntType),Block([],[])),MethodDecl(Id(method),Static,[],ArrayType(5,IntType),Block([],[]))])])

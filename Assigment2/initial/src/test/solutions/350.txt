@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Maim),[MethodDecl(Id(main),Instance,[],VoidType,Block([VarDecl(Id(a),ArrayType(2,StringType),StringLit("Hello world | checker"))],[AssignStmt(ArrayCell(CallExpr(Id(a),Id(boo),[]),IntLit(2)),ArrayCell(FieldAccess(Id(b),Id(boo)),BinaryOp(+,CallExpr(Id(a),Id(boo),[]),IntLit(3))))]))])])

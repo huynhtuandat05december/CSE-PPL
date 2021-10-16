@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(main),[AttributeDecl(Static,ConstDecl(Id(numOfShape),IntType,IntLit(0))),AttributeDecl(Instance,ConstDecl(Id(immuAttribute),IntType,IntLit(0)))])])

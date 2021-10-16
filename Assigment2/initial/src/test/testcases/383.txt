@@ -1,0 +1,6 @@
+
+        class XXX {
+            boolean method(){ }
+            static boolean method(){ }
+        }
+        

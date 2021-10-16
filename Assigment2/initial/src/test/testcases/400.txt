@@ -1,0 +1,6 @@
+class A {
+            int main() {
+                float[2] a = {1.01, 2.0E+123};
+                A[5] f;
+            }
+        }

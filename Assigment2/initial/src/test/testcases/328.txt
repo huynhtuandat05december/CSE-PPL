@@ -1,0 +1,20 @@
+
+class Test {
+        int main()
+{
+    if flag then
+       a:=1;
+    else{
+        if flag then
+            a:=2;
+        else{
+            if flag then
+                a:=3;
+            else{
+                return 0;
+            }
+        }
+    }
+}
+}
+        

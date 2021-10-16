@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Operator),[MethodDecl(Id(main),Instance,[],IntType,Block([],[Return(UnaryOp(-,IntLit(1)))]))])])

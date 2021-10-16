@@ -1,0 +1,9 @@
+
+class Operator
+{
+    int main()
+    {
+        return 1.0e10/1.2e10;
+    }
+}
+        

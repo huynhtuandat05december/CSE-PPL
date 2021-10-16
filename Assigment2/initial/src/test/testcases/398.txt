@@ -1,0 +1,11 @@
+class A {
+            static A instance;
+            A() {
+                if instance == nil then
+                    instance := this;
+            }
+            Text txt;
+            static void Display(string str) {
+                txt.text := str;
+            }
+        }

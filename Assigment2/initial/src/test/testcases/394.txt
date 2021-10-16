@@ -1,0 +1,8 @@
+class A {
+            int main() {
+                if a.check() then {
+                    a := f;
+                    return a / 2;
+                }
+            }
+        }

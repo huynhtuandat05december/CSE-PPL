@@ -1,0 +1,7 @@
+class A {
+            int main() {
+                final int a = 2;
+                float b;
+                b := a/2;
+            }
+        }

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Operator),[MethodDecl(Id(main),Instance,[],VoidType,Block([],[Return(BinaryOp(>=,IntLit(1),IntLit(2)))]))])])

@@ -1,0 +1,8 @@
+
+        class Maim {
+            void main(){
+                string [2] a="Hello world | checker";
+                a.boo()[2] := b.boo[a.boo() +3];
+            }
+        }
+        

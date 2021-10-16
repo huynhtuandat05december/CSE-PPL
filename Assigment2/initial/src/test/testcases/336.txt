@@ -1,0 +1,16 @@
+
+class CallbackHell
+{
+    int main(){
+        if(1)then{
+            if(1)then{
+                if(1)then{
+                    if(1)then{
+                        return 1;
+                    }
+                }
+            }
+        }
+    }
+}
+        

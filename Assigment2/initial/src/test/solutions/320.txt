@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Test),[MethodDecl(Id(abc__bc_ab),Instance,[param(Id(c),IntType)],BoolType,Block([],[])),MethodDecl(Id(print),Instance,[param(Id(a),StringType)],VoidType,Block([],[Call(Id(a),Id(printf),[BinaryOp(+,StringLit("hello"),Id(a))])]))])])

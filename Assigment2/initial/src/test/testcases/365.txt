@@ -1,0 +1,23 @@
+
+        class XXX { }
+        class main extends XXX {
+            # this is a line comment
+            /*
+                this is also a comment do nha ^^
+            */
+            final static int a=1,b=2;
+            final float a=1.1e+1, b=2.2e+2;
+            int a,b=1;
+            static int method(int a; float a,b){
+                final int a=1,b=2;
+                final float a=1.1e+1, b=2.2e+2;
+                int a,b;
+                return a;
+            }
+            void method1(int a; float a,b){
+                final int a=1,b=2;
+                float r,s;
+                int[5] a,b;
+                return 1;
+            }
+        }

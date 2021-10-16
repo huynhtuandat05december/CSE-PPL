@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(main),[])])

@@ -1,0 +1,14 @@
+class A {
+            void main() {
+                int[5] arr;
+                for i := 0 to 5 do {
+                    int v;
+                    v := os.get("int");
+                    if v <= 0 then {
+                        os.print("Error!!");
+                        break;
+                    }
+                    arr[i] := v;
+                }
+            }
+        }

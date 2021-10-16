@@ -1,0 +1,14 @@
+
+class CallbackHell
+{
+    int main(){
+        return "string";
+    }
+    int mainInt(){
+        return 1;
+    }
+    int mainFloat(){
+        return 1.0;
+    }
+}
+        

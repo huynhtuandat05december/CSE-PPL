@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Operator),[AttributeDecl(Instance,VarDecl(Id(a),IntType,IntLit(0))),MethodDecl(Id(main),Instance,[],IntType,Block([],[For(Id(i),IntLit(1),IntLit(100),True,Block([],[If(BinaryOp(==,Id(i),IntLit(2)),Break,AssignStmt(Id(a),BinaryOp(+,Id(a),IntLit(1))))])])]))])])

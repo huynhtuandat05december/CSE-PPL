@@ -1,0 +1,7 @@
+class A {
+            static A instance;
+            A() {
+                if instance == nil then
+                    instance := this;
+            }
+        }

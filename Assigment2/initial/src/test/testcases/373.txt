@@ -1,0 +1,10 @@
+
+        class XXX {
+            int method(){
+                for x:=1 to 100 do {
+                    io.writeIntLn(i);
+                    Intarray[i] := i + 1;
+                }
+            }
+        }
+        

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Student),[AttributeDecl(Instance,VarDecl(Id(id),IntType)),AttributeDecl(Instance,VarDecl(Id(salary),FloatType)),AttributeDecl(Instance,VarDecl(Id(name),ClassType(Id(String))))])])

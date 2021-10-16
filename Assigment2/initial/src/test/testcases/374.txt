@@ -1,0 +1,9 @@
+
+        class XXX {
+            int method(){
+                for x:=1 to 100 do {
+                    if a then { }
+                }
+            }
+        }
+        

@@ -1,0 +1,9 @@
+
+ class Test {
+        boolean abc__bc_ab(int c){
+        }
+        void print(string a){
+            a.printf("hello" + a);
+        }
+}
+        

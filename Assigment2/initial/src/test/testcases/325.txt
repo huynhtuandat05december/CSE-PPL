@@ -1,0 +1,8 @@
+
+ class Test {
+    int float2int(float a){}
+    int a(int[1] a; int b; string[5] c; string d){}
+    float b(){}
+    int c(string[7] c; int a; int b){}
+}
+        

@@ -1,0 +1,6 @@
+
+        class XXX {
+            float method(){ }
+            static float method(){ }
+        }
+        
