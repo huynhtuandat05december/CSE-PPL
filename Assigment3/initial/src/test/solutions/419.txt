@@ -1,0 +1,1 @@
+Type Mismatch In Constant Declaration: ConstDecl(Id(x),IntType,FloatLit(10.0))

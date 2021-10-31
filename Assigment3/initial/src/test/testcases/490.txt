@@ -1,0 +1,9 @@
+
+        class XXX {
+            int x() {
+                string x = "aaa";
+                x := x^"bbb";
+                x := x^2;
+            }
+        }
+        

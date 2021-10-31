@@ -1,0 +1,8 @@
+ class C {
+            int main() {
+                int i;
+                for i:=1 to 2 do
+                break;
+                continue;
+            }
+        }

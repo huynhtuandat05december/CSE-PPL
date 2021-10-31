@@ -1,0 +1,13 @@
+
+            class A {
+                int foo(){
+                    return 7.8;
+                }
+            }
+            class B extends A{
+                A a = new A();
+                int test(){
+                    a.foo();
+                }
+            }
+         

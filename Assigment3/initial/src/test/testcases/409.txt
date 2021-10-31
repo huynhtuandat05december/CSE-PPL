@@ -1,0 +1,9 @@
+
+            class B{}
+            class A {
+                int foo(){
+                    C test;
+                }
+
+            }
+        

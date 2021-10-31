@@ -1,0 +1,11 @@
+
+            class B{
+                final static string a="test";
+            }
+            class A extends B{
+                string foo(){
+                    B obj;
+                    string a=obj.a;
+                }
+            }
+         

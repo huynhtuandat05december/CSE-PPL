@@ -1,0 +1,10 @@
+
+        class XXX {
+            int x() {
+                boolean x = true && true;
+                x := false || false;
+                x := !true;
+                x := 1 || false;
+            }
+        }
+        

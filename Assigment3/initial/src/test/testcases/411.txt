@@ -1,0 +1,10 @@
+
+            class B{}
+            class A {
+                int foo(){
+                    final int a = 0;
+                    a:=1;
+                }
+
+            }
+        

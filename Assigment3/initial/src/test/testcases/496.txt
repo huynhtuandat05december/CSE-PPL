@@ -1,0 +1,10 @@
+
+        class XXX {
+            int x() {
+                final float a = 1.1;
+                final float x = 1 + a;
+                int b;
+                final int c = b+1;
+            }
+        }
+        

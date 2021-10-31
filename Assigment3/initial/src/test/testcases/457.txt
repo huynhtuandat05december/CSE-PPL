@@ -1,0 +1,8 @@
+ class A{
+            int m;
+            int foo(){
+                int n=m;
+            }
+
+        }
+        

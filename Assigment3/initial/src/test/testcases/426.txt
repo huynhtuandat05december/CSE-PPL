@@ -1,0 +1,13 @@
+
+            class A {
+                int get(int a; float b) {}
+            }
+            class B extends A{
+                B (){}
+                int get;
+            }
+            class C {
+                B b = new B();
+                int get = b.get(1,1.5);
+            }
+         

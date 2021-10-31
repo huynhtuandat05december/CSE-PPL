@@ -1,0 +1,13 @@
+
+        class C {
+            static int a;
+            int b;
+            int get() {}
+        }
+        class B extends C {
+            C c = new C();
+            int a = C.a;
+            int get = this.c.get();
+            int b = this.c.b;
+            boolean f = 1 != true;
+        }

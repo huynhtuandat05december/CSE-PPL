@@ -1,0 +1,4 @@
+ class C {
+            static int a;
+            int b = !C.a;
+        }

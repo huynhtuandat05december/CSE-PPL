@@ -1,0 +1,1 @@
+Illegal Member Access: CallExpr(Id(YYY),Id(method4),[])

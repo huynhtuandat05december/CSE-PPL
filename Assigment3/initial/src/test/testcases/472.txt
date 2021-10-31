@@ -1,0 +1,9 @@
+
+        class C {
+            final int a = 5;
+            int get() {}
+            int main() {
+                final int a = this.a + 1;
+                final int c = this.get() + 1;
+            }
+        }

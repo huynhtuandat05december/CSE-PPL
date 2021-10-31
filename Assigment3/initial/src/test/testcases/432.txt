@@ -1,0 +1,11 @@
+
+            class A {
+
+            }
+            class B extends A{
+                int test(){
+                    float[2] a;
+                    a:={1,2,3};
+                }
+            }
+         

@@ -1,0 +1,12 @@
+class A {
+            int main(int a) {
+                {
+                    int a; # make new block to cover is ok.
+                }
+            }
+        }
+        class C {
+            int main(int b) {
+                int b;
+            }
+        }

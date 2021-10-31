@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Ex),[AttributeDecl(Static,VarDecl(Id(a),IntType)),AttributeDecl(Instance,ConstDecl(Id(x),IntType,FieldAccess(Id(Ex),Id(a))))])])

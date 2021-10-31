@@ -1,0 +1,7 @@
+ class C {
+            static int a = 1;
+        }
+        class A {
+            final int a = 1 + (1 + C.a);
+        }
+        

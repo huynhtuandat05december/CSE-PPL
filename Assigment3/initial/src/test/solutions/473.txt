@@ -1,0 +1,1 @@
+Type Mismatch In Statement: If(Id(b),AssignStmt(Id(a),IntLit(1)),AssignStmt(Id(a),IntLit(2)))

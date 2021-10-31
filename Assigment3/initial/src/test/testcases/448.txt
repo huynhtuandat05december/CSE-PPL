@@ -1,0 +1,12 @@
+ class C {
+            int main() {
+                int i;
+                for i:=1 to 2 do {
+                    if i == 1 then break;
+                    else {continue;}
+                    continue;
+                    break;
+                }
+                continue;
+            }
+        }

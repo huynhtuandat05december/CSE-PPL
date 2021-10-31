@@ -1,0 +1,1 @@
+ class C {final int a = 10;static final float a = 2.2;}

@@ -1,0 +1,16 @@
+
+            class A {
+                int value=5;
+            }
+            class B extends A{
+                int test(){
+                    int a=5;
+                    A b=new A();
+                    string c;
+                    if a < b then
+                        c:="a";
+                    else
+                        c:="b";
+                }
+            }
+         

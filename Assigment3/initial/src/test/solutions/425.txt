@@ -1,0 +1,1 @@
+Illegal Member Access: FieldAccess(Id(obj),Id(a))

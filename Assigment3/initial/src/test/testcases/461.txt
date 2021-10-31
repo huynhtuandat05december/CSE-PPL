@@ -1,0 +1,7 @@
+ class C {
+            final int a = 1;
+            float b = 1;
+            final float c = this.a;
+            final float d = this.b;
+        }
+        

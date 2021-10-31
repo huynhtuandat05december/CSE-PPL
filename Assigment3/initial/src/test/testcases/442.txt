@@ -1,0 +1,1 @@
+ class C {void a() {} static int a() {}}

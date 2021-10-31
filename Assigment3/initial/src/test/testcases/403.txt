@@ -1,0 +1,7 @@
+
+            class A {
+                static final int numOfShape = 0;
+                final int immuAttribute = 0;
+                int numOfShape(){}
+            }
+        

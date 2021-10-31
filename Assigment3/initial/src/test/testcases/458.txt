@@ -1,0 +1,6 @@
+ class A{
+            int m;
+            final int  n=this.m;
+
+        }
+        

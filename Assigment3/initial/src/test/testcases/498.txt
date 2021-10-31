@@ -1,0 +1,14 @@
+
+        class XXX {
+            int x() {
+                final float a = 1.1;
+                final float x = 1 + a;
+                YYY z;
+                final float y = z.y;
+            }
+        }
+        class YYY {
+            static final int x = 1;
+            static final int y = 1;
+        }
+        

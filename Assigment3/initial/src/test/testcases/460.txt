@@ -1,0 +1,8 @@
+ class C {
+            static int get(){}
+        }
+        class A{
+            C C = new C();
+            int a = this.C.get();
+        }
+        

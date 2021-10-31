@@ -1,0 +1,1 @@
+Illegal Constant Expression: FieldAccess(Self(),Id(b))

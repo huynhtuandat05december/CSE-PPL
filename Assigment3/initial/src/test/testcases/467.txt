@@ -1,0 +1,6 @@
+
+        class C {
+            int main(int b) {
+                final int b = 5;
+            }
+        }

@@ -1,0 +1,5 @@
+
+        class C {
+            final int a = 1 + 2 - 3;
+            final C c = new C();
+        }

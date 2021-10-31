@@ -1,0 +1,21 @@
+
+        class XXX extends YYY {
+            int x() {
+                XXX a;
+                XXX b;
+                a.b := b.b;
+                a.b := b.method4();
+                a.b := YYY.a;
+                a.b := YYY.method2();
+                a.b := YYY.method4();
+            }
+        }
+        class YYY {
+            static int a;
+            int b;
+            static void method1() { }
+            static int method2() { }
+            void method3() { }
+            int method4() { }
+        }
+        

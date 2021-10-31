@@ -1,0 +1,11 @@
+
+            class A {
+
+            }
+            class B extends A{
+                int test(){
+                    string[2] a;
+                    a:={1,2};
+                }
+            }
+         

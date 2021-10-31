@@ -1,0 +1,11 @@
+
+            class B{
+                string b="b";
+            }
+            class A extends B{
+                final string a="test";
+                string foo(){
+                    string b=this.c;
+                }
+            }
+         

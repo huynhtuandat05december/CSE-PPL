@@ -1,0 +1,1 @@
+Illegal Member Access: CallExpr(FieldAccess(Self(),Id(C)),Id(get),[])

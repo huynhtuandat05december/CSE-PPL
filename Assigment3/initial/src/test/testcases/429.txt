@@ -1,0 +1,16 @@
+
+            class A {
+
+            }
+            class B extends A{
+                A a = new A();
+                int test(){
+                    int a;
+                    int b=1;
+                    if b then
+                        a:=1;
+                    else
+                        a:=2;
+                }
+            }
+         

@@ -1,0 +1,7 @@
+
+        class XXX {
+            int x() {
+                final int y = 1 / 2;
+            }
+        }
+        

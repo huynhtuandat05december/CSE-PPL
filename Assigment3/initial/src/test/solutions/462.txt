@@ -1,0 +1,1 @@
+Illegal Constant Expression: CallExpr(Self(),Id(get),[FieldAccess(Self(),Id(a)),FieldAccess(Self(),Id(c))])

@@ -1,0 +1,14 @@
+
+            class A {
+            }
+            class B extends A{
+                A a = new A();
+                int test(){
+                    int a=0;
+                    A i;
+                    for i := 1 to 100 do {
+                        a:=a+1;
+                    }
+                }
+            }
+         

@@ -1,0 +1,8 @@
+ class C {
+            int a;
+            static int b;
+            int main() {
+                int b = this.a + C.b;
+                int c = a;
+            }
+        }

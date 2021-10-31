@@ -1,0 +1,8 @@
+
+            class a {
+            int foo(){
+                int x =y;
+                int y;
+            }
+        }
+         

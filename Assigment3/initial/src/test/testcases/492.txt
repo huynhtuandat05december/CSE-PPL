@@ -1,0 +1,11 @@
+
+        class XXX {
+            int x() {
+                int x;
+                for x := 1 to 100 do {
+                    continue;
+                }
+                break;
+            }
+        }
+        

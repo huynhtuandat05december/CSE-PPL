@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(XXX),[MethodDecl(Id(x),Instance,[],IntType,Block([ConstDecl(Id(x),ArrayType(3,IntType),[IntLit(1),IntLit(1),IntLit(1)])],[AssignStmt(Id(x),[IntLit(1),IntLit(1),IntLit(1)])]))])])

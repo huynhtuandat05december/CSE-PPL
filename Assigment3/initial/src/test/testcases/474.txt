@@ -1,0 +1,9 @@
+
+            class A {
+                A(int a){}
+            }
+            class B{
+                A b=new A("a");
+            }
+
+        
