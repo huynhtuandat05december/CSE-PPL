@@ -1,0 +1,17 @@
+class BKoolClass {
+            void main(){
+               int a;
+               float b;
+               string c;
+               boolean d;
+               a:=5;
+               b:=5.1;
+               c:="abc";
+               d:=true;
+               io.writeInt(a);
+               io.writeFloat(b);
+               io.writeStr(c);
+               io.writeBool(d);
+            }
+        }
+        

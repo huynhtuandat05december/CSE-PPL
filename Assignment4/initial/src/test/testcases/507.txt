@@ -1,0 +1,7 @@
+class BKoolClass {
+            static final int a=5;
+            static void main() {
+                io.writeInt(this.a);
+            }
+        }
+        

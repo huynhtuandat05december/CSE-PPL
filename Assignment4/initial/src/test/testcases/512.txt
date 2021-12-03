@@ -1,0 +1,9 @@
+class BKoolClass {
+            static final float a=1.0;
+            static void main() {
+                float b=2.5;
+                io.writeFloat(this.a-b);
+
+            }
+        }
+        

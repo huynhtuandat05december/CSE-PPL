@@ -1,0 +1,8 @@
+class BKoolClass {
+            void main(){
+               int a;
+               a:=5;
+               io.writeInt(a);
+            }
+        }
+        

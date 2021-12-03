@@ -1,0 +1,1 @@
+class BKoolClass {static void main() {io.writeInt(1+3);}}
