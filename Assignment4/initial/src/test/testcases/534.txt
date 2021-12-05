@@ -1,0 +1,13 @@
+class BKoolClass {
+            static final float a=1.0;
+            static final string b="abc";
+            static final boolean c=false;
+            static void main() {
+                final boolean d=true;
+                io.writeFloat(this.a);
+                io.writeStr(this.b);
+                io.writeBool(c);
+                io.writeBool(d);
+            }
+        }
+        

@@ -211,6 +211,9 @@ class CodeGenVisitor(BaseVisitor, Utils):
             self.emit.printout(self.emit.emitREADVAR(
                 "this", ClassType(Id(self.className)), 0, frame))
             self.emit.printout(self.emit.emitINVOKESPECIAL(frame))
+        for x in body.decl:
+            if type(x) is VarDecl and x.varInit is not None:
+                self.visit(Assign(x.variable, x.varInit), SubBody(frame, glenv))
         list(map(lambda x: self.visit(x, SubBody(frame, glenv)), body.stmt))
 
         self.emit.printout(self.emit.emitLABEL(frame.getEndLabel(), frame))
@@ -237,9 +240,10 @@ class CodeGenVisitor(BaseVisitor, Utils):
         idx = frame.getNewIndex()
         self.emit.printout(self.emit.emitVAR(
             idx, ast.variable.name, ast.varType, frame.getStartLabel(), frame.getEndLabel(), frame))
-        if ast.varInit == None:
-            return Symbol(ast.variable.name, ast.varType, Index(idx), None, None)
-        return Symbol(ast.variable.name, ast.varType, Index(ast.varInit), None, None)
+        # if ast.varInit == None:
+        #     return Symbol(ast.variable.name, ast.varType, Index(idx), None, None)
+        # return Symbol(ast.variable.name, ast.varType, Index(ast.varInit), None, None)
+        return Symbol(ast.variable.name, ast.varType, Index(idx), None, None)
 
     def visitConstDecl(self, ast, o):
         frame = o.frame
@@ -358,7 +362,7 @@ class CodeGenVisitor(BaseVisitor, Utils):
             frame, [self.visit(ele, env)]+env.sym), ast.decl, SubBody(frame, []))
 
         self.emit.printout(self.emit.emitLABEL(frame.getStartLabel(), frame))
-        ast.stmt.map(lambda x: self.visit(x, SubBody(frame, nenv+env)))
+        map(lambda x: self.visit(x, SubBody(frame, nenv+env)),ast.stmt)
         self.emit.printout(self.emit.emitLABEL(frame.getEndLabel(), frame))
         frame.exitScope()
 
@@ -371,14 +375,51 @@ class CodeGenVisitor(BaseVisitor, Utils):
         self.emit.printout(expCode)
         label1 = frame.getNewLabel()
         label2 = frame.getNewLabel()
-        self.emit.printout(self.emit.emitIFTRUE(label1, frame))
+        self.emit.printout(self.emit.emitIFFALSE(label1, frame))
         self.visit(ast.thenStmt, ctxt)
         self.emit.printout(self.emit.emitGOTO(label2, frame))
         self.emit.printout(self.emit.emitLABEL(label1, frame))
         if ast.elseStmt is not None:
             self.visit(ast.elseStmt, SubBody(frame, nenv))
         self.emit.printout(self.emit.emitLABEL(label2, frame))
+    def visitFor(self, ast, o):
+        ctxt = o
+        frame = ctxt.frame
+        nenv = ctxt.sym
+        exp1Code, _ = self.visit(ast.expr1, Access(frame, nenv, False, True))
+        exp2Code, _ = self.visit(ast.expr2, Access(frame, nenv, False, True))
+        lhsWCode, _ = self.visit(ast.id, Access(frame, nenv, True, True)) # Write code
+        lhsRCode, _ = self.visit(ast.id, Access(frame, nenv, False, False)) # Read code
+        
+        labelS = frame.getNewLabel() # label start
+        labelE = frame.getNewLabel() # label end
 
+        # Init value
+        self.emit.printout(exp1Code)
+        self.emit.printout(lhsWCode)
+        frame.enterLoop()
+        # Loop
+        self.emit.printout(self.emit.emitLABEL(labelS, frame))
+        # 1. Condition
+        self.emit.printout(lhsRCode)
+        self.emit.printout(exp2Code)
+        if ast.up:
+            self.emit.printout(self.emit.emitIFICMPGT(labelE, frame))
+        else:
+            self.emit.printout(self.emit.emitIFICMPLT(labelE, frame))
+        # 2. Statements
+        self.visit(ast.loop, o)
+        self.emit.printout(self.emit.emitLABEL(frame.getContinueLabel(), frame))
+        # 3. Update index
+        self.emit.printout(lhsRCode)
+        self.emit.printout(self.emit.emitPUSHICONST(1, frame))
+        self.emit.printout(self.emit.emitADDOP('+' if ast.up else '-', IntType(), frame))
+        self.emit.printout(lhsWCode)
+
+        self.emit.printout(self.emit.emitGOTO(labelS, frame)) # loop
+        self.emit.printout(self.emit.emitLABEL(labelE, frame))
+        self.emit.printout(self.emit.emitLABEL(frame.getBreakLabel(), frame))
+        frame.exitLoop()
     def visitContinue(self, ast, o):
         ctxt = o
         frame = ctxt.frame
@@ -400,6 +441,7 @@ class CodeGenVisitor(BaseVisitor, Utils):
         else:
             self.emit.printout(right[0])
         self.emit.printout(left[0])
+        
 
     def visitReturn(self, ast, o):
         ctxt = o
@@ -431,32 +473,7 @@ class CodeGenVisitor(BaseVisitor, Utils):
                 return (self.emit.emitPUSHCONST(self.emit.emitExpr(sym.value, sym.mtype), sym.mtype, frame), sym.mtype)
             return (self.emit.emitGETSTATIC(obj[0]+"."+sym.name, sym.mtype, frame), sym.mtype)
 
-    # def visitCallExpr(self, ast, o):
-    #     ctxt = o
-    #     frame = ctxt.frame
-    #     nenv = ctxt.sym
-    #     if type(ast.obj) is SelfLiteral:
-    #         sym = self.handleAccess(ast, o, self.className)
-    #     else:
-    #         obj = self.visit(ast.obj, o)
-    #         sym = self.handleAccess(ast, o, obj[0])
-    #     cname = sym.value.value
-    #     ctype = sym.mtype
-    #     in_ = ("", list())
-    #     for x in ast.param:
-    #         str1, typ1 = self.visit(x, Access(frame, nenv, False, True))
-    #         in_ = (in_[0] + str1, in_[1].append(typ1))
-    #     self.emit.printout(in_[0])
-    #     self.emit.printout(self.emit.emitINVOKESTATIC(
-    #         cname + "/" + ast.method.name, ctype, frame))
-    #     print(sym.value)
-    #     if sym is not None:
-    #         if(ctxt.isLeft == True):
-    #             return (self.emit.emitPUTSTATIC(obj[0]+"."+sym.name, sym.mtype, frame), sym.mtype)
-    #         if sym.value is not None:
-    #             return (self.emit.emitPUSHCONST(self.emit.emitExpr(sym.value, sym.mtype), sym.mtype, frame), sym.mtype)
-    #         return (self.emit.emitGETSTATIC(obj[0]+"."+sym.name, sym.mtype, frame), sym.mtype)
-
+    
     def visitId(self, ast, o):
         ctxt = o
         frame = ctxt.frame
@@ -473,8 +490,6 @@ class CodeGenVisitor(BaseVisitor, Utils):
                 sym = self.lookup(
                     ast.method, parentClass.mem, lambda x: x.name)
         if sym is not None:
-            # if type(sym.mtype) is ArrayType:
-            #     return (self.emit.emitREADVAR(ast.name, sym.mtype, sym.value, frame), sym.mtype)
             if type(sym.value) is Index or type(sym.value) is Const:
                 if ctxt.isLeft == True:
                     if ctxt.isFirst == True:
@@ -486,9 +501,9 @@ class CodeGenVisitor(BaseVisitor, Utils):
                 else:
                     if ctxt.isFirst == True:
                         if type(sym.value) is Index:
-                            if type(sym.value.value) is int:
-                                return (self.emit.emitREADVAR(ast.name, sym.mtype, sym.value.value, frame), sym.mtype)
-                            return (self.emit.emitREADCONST(sym.value.value, sym.mtype, frame), sym.mtype)
+                            # if type(sym.value.value) is int:
+                            return (self.emit.emitREADVAR(ast.name, sym.mtype, sym.value.value, frame), sym.mtype)
+                            # return (self.emit.emitREADCONST(sym.value.value, sym.mtype, frame), sym.mtype)
                         if type(sym.value) is Const:
                             return (self.emit.emitREADCONST(sym.value.value, sym.mtype, frame), sym.mtype)
                     else:

@@ -1,0 +1,10 @@
+class BKoolClass {
+            static final string a="hello";
+            static final string b=" world";
+            static final string c=" world";
+            static void main() {
+                io.writeStr((a^b)^c);
+
+            }
+        }
+        

@@ -1,0 +1,10 @@
+class BKoolClass {
+            static final boolean a=true;
+            static void main() {
+                boolean b=true;
+                io.writeBool(this.a && b && true);
+                io.writeBool(this.a);
+                io.writeBool(b);
+            }
+        }
+        

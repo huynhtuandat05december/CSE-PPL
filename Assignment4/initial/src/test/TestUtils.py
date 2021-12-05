@@ -62,7 +62,7 @@ class TestCodeGen():
             codeGen.gen(asttree, path)
 
             subprocess.call("java  -jar " + JASMIN_JAR + " " + path +
-                            "/BKoolClass.j", shell=True, stderr=subprocess.STDOUT)
+                            "/*.j", shell=True, stderr=subprocess.STDOUT)
 
             subprocess.run("java -cp ./lib:. BKoolClass",
                            shell=True, stdout=f, timeout=10)

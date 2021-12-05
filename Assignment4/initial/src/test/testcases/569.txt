@@ -1,0 +1,10 @@
+class BKoolClass {
+            void main(){
+                boolean flag=true;
+                if flag then
+                    io.writeStr("Expression is true");
+                else
+                    io.writeStr("Expression is false");
+            }
+        }
+        

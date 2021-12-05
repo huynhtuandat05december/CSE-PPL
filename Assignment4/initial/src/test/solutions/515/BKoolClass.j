@@ -6,13 +6,15 @@
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
 .var 1 is b F from Label0 to Label1
 Label0:
-	ldc 1.1
 	ldc 2.5
+	fstore_1
+	ldc 1.1
+	fload_1
 	fdiv
 	invokestatic io/writeFloat(F)V
 Label1:
 	return
-.limit stack 3
+.limit stack 2
 .limit locals 2
 .end method
 

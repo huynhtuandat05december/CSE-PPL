@@ -10,7 +10,7 @@ Label0:
 	dup
 	invokespecial A()V
 	astore_1
-	iconst_1
+	iconst_2
 	putstatic A.a I
 	getstatic A.a I
 	invokestatic io/writeInt(I)V
