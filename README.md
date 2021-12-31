@@ -14,9 +14,9 @@ Languages used: Python and ANTLR4
 Language is implemented: [BKOOL-2021](https://github.com/huynhtuandat05december/Principles-Of-Programming-Languages/blob/master/BKOOL-2021.pdf)
 
 - [Assigment1](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assingment1)
-- [Assigment2](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assigment2)
-- [Assigment3](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assigment3)
-- [Assigment4](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assigment4)
+- [Assigment2](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assingment2)
+- [Assigment3](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assingment3)
+- [Assigment4](https://github.com/huynhtuandat05december/CSE-PPL/tree/master/Assignment4)
 
 ### Programing Code
 
