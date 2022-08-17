@@ -1,0 +1,202 @@
+1/
+def visitDoWhile(ast: DoWhile, o: Context):
+    frame = o.frame
+    label_begin = frame.getNewLabel()
+    frame.enterLoop()
+    
+    self.emit.printout(self.emit.LABEL(label_begin, frame))
+
+    for stmt in ast.stmt:
+        self.visit(stmt, o)
+
+    self.emit.printout(frame.getContLabel())
+    
+    self.visit(ast.expr, o)
+    self.emit.printout(self.emit.IFTRUE(label_begin, frame))
+    
+    self.emit.printout(self.emit.LABEL(frame.getBreakLabel()))
+    frame.exitLoop()
+
+def visitContinue(ast: Continue, o: Context):
+    frame = o.frame
+    self.emit.printout(self.emit.GOTO(frame.getContLabel()))
+
++ Giaỉ Thích:
+    Sở dĩ phát biểu continue ở sâu bên trong thân của phát 
+    biểu Dowhile có thể chuyển điều khiển đến vị trí thích hợp
+    là do khi thực hiện vòng Loop ta sử  dụng lệnh frame.enterLoop()
+    frame sẽ tạo 2 label Break, Continue khi visit stmt thì truyền o
+    có chứa frame ghi ghi lại 2 label khi lệnh continue xuất hiện thì
+    chỉ cần sử dụng lênh goto đến label Continue đã được tạo sẵn 
+
+2/
+def visitBinaryOp(ast: BinaryOp, o: Context):
+    op = ast.op
+    frame = o.frame
+    ltype, lcode = self.visit(ast.left, o)
+    rtype, rcode = self.visit(ast.right, o)
+    
+    result.extend(lcode)
+    
+    if op in ['+', '/']:
+        
+        if type(ltype) is IntType and type(rtype) is FloatType:
+            result.append(self.emit.I2F(frame))
+            ltype = FloatType
+        
+        result.extend(rcode)
+
+        if type(ltype) is FLoatType and type(rtype) is IntType:
+            result.append(self.emit.I2F(frame))
+            rtype = FloatType
+        
+        if op == '+':
+            result.append(self.emit.ADDOP(op, ltype, frame))
+            return ltype, result
+        else:
+            result.append(self.emit.DIVOP(op, ltype, frame))
+            return FloatType(), result
+
+    elif op == '&&':
+        label_false = frame.getNewLabel()
+        label_end = frame.getNewLabel()
+        result.append(self.emit.IFFALSE(label_false, frame))
+        result.extend(rcode)
+        
+        # a && b if a true then a && b = b
+
+        result.append(self.emit.GOTO(label_end, frame))
+
+        result.append(self.emit.LABEL(label_false, frame))
+        result.append(self.emit.PUSHICONST(0, frame))
+        result.append(self.emit.LABEL(label_end, frame))
+
+        return BoolType(), result
+
+3/
+Định Nghĩa:
+    + pointer type là kiểu mà biến chứa địa chỉ bộ nhớ hoặc
+    là giá trị nil
+    + reference type là kiểu mà biến tham khảo đến đối tượng
+    hoặc một giá trị trong vùng nhớ
+    + ví dụ:
+        - Pointer Type trong C++:
+            int a = 5;
+            int *b;
+            b = &a;
+            b là kiểu Pointer Type giữ địa chỉ vùng nhớ của biến a
+        - Reference Type trong C++:
+            int a = 5;
+            int& b = a; 
+            b là kiểu Reference tham khảo đến biến a
+
+    + Điểm khác nhau giữa Pointer Type Và Reference Type là:
+        + Pointer Type chứa địa chỉ vùng nhớ, 
+        Reference Type tham khảo đến đối tượng hoặc giá trị của vùng nhớ
+    
+    + Hai kiểu này gây ra hiện tượng alias:
+        tại vì 1 đối tượng có địa chỉ được chứ trong nhiều biến kiểu Pointer Type 
+        hoặc được nhiều biến kiểu Reference Type tham khảo đến
+
+4/
+    Điểm khác biệt của : đệ qui (recursive),biến cố (exception),
+    trình cộng hành (coroutine), trình định thời (scheduled subroutine)
+    và công tác (task) so với cơ chế Gọi-Trở về đơn giản (simple call-return)
+        + Đệ qui có hàm gọi chính là hàm được gọi
+        + Biến cố không có lời gọi hàm tường minh
+        + trình cộng hành có thể có nhiều entry point
+        + công tác có thể  thực thi đồng thời nhiều task khác
+        trên cùng nhiều bộ xử lí hoặc 1 một bộ xử lí
+        + trình định thời có thể không bắt đầu ngay lập tức khi
+        được gọi, thực hiện dựa vào lịch định thời
+
+
+5/
+Phương pháp tombstone :
+    + mỗi 'heap-dynamic variable' kèm theo một ô nhớ đặt biệt gọi là tombstone
+    , nó là một con trỏ trỏ đến 'heap-dynamic variable', 'actual pointer variable'
+    trỏ tới tombstone
+    + khi 'heap-dynamic variable' được giải phóng tombstone vẫn được giữ lại,
+    và được set giá trị là nil
+    + khi truy xuất đến 'heap-dynamic variable' thực hiện gián tiếp thông qua tombstone
+    + khi truy xuất tới nil tombstone thì có thể phát hiện ra lỗ tham chiếu treo
+Phương pháp locks and keys:
+    + pointer được biểu diễn theo cặp gía trị (key, value) trong đó key kiểu interger
+    value là địa chỉ vùng nhớ con trỏ trỏ đến, 'heap-dynamic variable' gồm phần header
+    chứa lock value và phần lưu trữ cho biến
+    + khi 'heap-dynamic variable' được cấp phát thì sinh ra lock value lưu trữ vào
+    phần lock value ở 'heap-dynamic variable' và key value ở pointer
+    + khi 'heap-dynamic variable' được giải phòng thì lock value sẽ được đổi thành
+    một lock value không hợp lệ
+    + khi truy xuất trong trường hợp bình thường thì key value và lock value khớp nhau
+    truy xuất được cho phép
+    + khi truy xuất mà giá trị key value và lock value không khớp thì truy xuất không được
+    phép phát hiện ra lỗi tham chiếu treo
+
+6/
+    H(x, f, h) là hàm 3 tham số
+        gọi x, f, h lần lượt có kiểu là T1, T2, T3
+        H: T1 x T2 x T3 -> T4   (1)
+    f là là hàm 1 tham số
+        f: T5 -> T6             (2)
+        với tham số  được truyền là x:
+            T5 = T1 (3)
+        với f(x) xuất hiện trong biểu thức kiều kiện của if
+            T6 = boolean    (4)
+        với f(x) xuất hiện trong biểu thức return ở vế else
+            T6 = T4 (5)
+
+    h là hàm 1 tham số 
+        h: T7 -> T8     (6)
+        với tham số truyền là x:
+            T7 = T1     (7)
+        với tham số truyền là h(x):
+            T7 = T8     (8)
+        h xuất hiện ở return ở vế if:
+            T8 = T6     (9)
+
+    từ (4) (9) (8) (7) => T1 = boolean  (10)
+    từ (4) (10) (5) => T2 = boolean -> boolean
+    từ (4) (6) (7) (8) (9) => T3: boolean -> boolean
+    từ (5) (4): => T4: boolean
+    Vậy H: boolean x (boolean -> boolean) x (boolean -> boolean) -> boolean
+
+7/
+main: a//1, b//1, c//1, sub1, main
+sub1: a//2, b//1, c//1, sub1, sub2, sub3, main
+sub2: a//3, b//1, c//3, sub1, sub2, sub3, f, main
+sub3: a//2, b//4, c//1, sub1, sub2, sub3, main
+
+8/
+
+(a) Kết quả in khi truyền bằng trị kết quả:
+        12 4 6 14
+
+    Giải Thích: 
+        + Khi truyền bằng trị kết quả khi i, a thay đổi không làm
+        j, A[0] thay đổi
+        + Sau khi thực hiện hết vòng for thì s = 12, A[0] = 1, a = 4
+        + Khi kết thúc hàm cập nhật giá trị
+        + a = 4 được cập nhật cho A[0] dãy A sau cập nhật 4 6 14
+        + i = 4 được cập nhật cho j
+(b) Kết quả khi truyền bằng tham khảo
+        10 3 5 13
+    Giải thích:
+        + Khi truyền bằng tham khảo i, a thay đổi cũng làm cho
+        j, A[0] thay đổi
+        + Vì i được lặp từ 0 -> 3, i tham khảo j nên vòng for
+        duyệt qua tất cả phần tử của A và giảm 1 đơn vị
+        + S là tổng của n lần giá trị A[0], ở vòng lặp thứ nhất
+        A[0] = 4, các vòng lặp sau A[0] = 3 => S = 4 + 3*2 = 10
+
+(c) Kết quả khi truyền bằng tên:
+        24 3 5 13
+
+    Giải thích:
+        + a, i trong sumAndDecrease được thay bằng A[j] và j
+        int s = 0 ;
+        for ( ; j < n ; j = j + 1 ) {
+            s = s + A[j] ;
+            A[ j ] = A[ j ] − 1 ;
+        }
+        return s ; 
